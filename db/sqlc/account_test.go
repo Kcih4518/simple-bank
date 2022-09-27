@@ -4,14 +4,15 @@ import (
 	"context"
 	"testing"
 
+	"github.com/Kcih4518/simple-bank/util"
 	"github.com/stretchr/testify/require"
 )
 
 func TestCreateAccount(t *testing.T) {
 	arg := CreateAccountParams{
-		Owner:    "tom",
-		Balance:  10,
-		Currency: "USD",
+		Owner:    util.RandomOwner(),
+		Balance:  util.RandomMoney(),
+		Currency: util.RandomCurrency(),
 	}
 	// testQueries is declared in the main_test
 	// CreateAccount shouldn't return err and return account not empty
