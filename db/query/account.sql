@@ -17,6 +17,15 @@ FROM accounts
 WHERE id = $1
 LIMIT 1;
 
+-- name: GetAccountForUpdate :one
+SELECT *
+FROM accounts
+WHERE id = $1
+LIMIT 1
+FOR
+UPDATE;
+
+
 -- name: ListAccounts :many
 SELECT *
 FROM accounts
